@@ -3,7 +3,6 @@ import React from "react";
 // components
 import {
   Button,
-  listItemSecondaryActionClasses,
   Paper,
   Typography,
 } from "@mui/material";
@@ -11,11 +10,13 @@ import {
 // styles
 import itemStyles from "./item.styles";
 
-const Item = ({ name, description }) => {
+const Item = ({item}) => {
+
+
   return (
     <Paper>
-      <Typography variant="h2">{name}</Typography>
-      <p>{description}</p>
+      <Typography variant="h2">{item.name}</Typography>
+      <p>{item.description}</p>
       <Button sx={itemStyles.button}>Check it out!</Button>
     </Paper>
   );

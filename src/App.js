@@ -1,12 +1,12 @@
 import React from 'react';
 
-
 // components
+import { CarouselExample } from './components';
 
 function App() {
   return (
-    <div className="App">
-      
+    <div>
+      <CarouselExample />
     </div>
   );
 }

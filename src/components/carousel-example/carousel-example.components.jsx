@@ -1,14 +1,40 @@
-import React from 'react';
+import React from "react";
+
+// Carousel testing
 
 // components
-import { Item } from '..';
+import Carousel from "react-material-ui-carousel";
+import { Item } from "..";
 
-const Carousel = () => {
-    return (
-        <div>
-            
-        </div>
-    )
-}
+// icons
+import { ChevronLeftRounded, ChevronRightRounded,  } from "@mui/icons-material";
 
-export default Carousel;
+const CarouselExample = () => {
+  var items = [
+    {
+      name: "Random Name #1",
+      description: "This is just some random text.",
+    },
+    {
+      name: "Random Name #2",
+      description: "This is just some random text.",
+    },
+  ];
+
+  return (
+    <Carousel
+        // Any functionalty that you want to add when next or prev is changed
+        next={(next, active) => console.log(`we left ${active}, and are now at ${next}`)}
+        prev={(prev, active) => console.log(`we left ${active}, and are now at ${prev}`)}
+        // Icons for next and prev
+        NextIcon={<ChevronRightRounded />}
+        PrevIcon={<ChevronLeftRounded />}
+    >
+      {items.map((item, index) => (
+        <Item key={index} item={item} />
+      ))}
+    </Carousel>
+  );
+};
+
+export default CarouselExample;
